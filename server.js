@@ -17,4 +17,4 @@ app.get('/:input', function(req,res){
   }
   res.end(JSON.stringify({"unix":unix, "natural":natural}));
 })
-app.listen($PORT);
+app.listen(process.env.PORT, process.env.IP);
