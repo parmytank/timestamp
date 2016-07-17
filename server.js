@@ -11,7 +11,8 @@ app.get('/:input', function(req,res){
   }
   if(moment(string, 'MMM DD, YYYY').isValid()){
     var date = moment(string).toDate().toString();
-    res.end(date);
+    var unix = moment(string).toDate().getTime()/1000;
+    res.end(date + ', ' + unix);
   }
   res.end('Not a valid date');
 })
