@@ -11,7 +11,7 @@ app.get('/:input', function(req,res){
   if(!isNaN(string)){
     string = Number(string) * 1000;
   }
-  if(moment(string, 'MMM DD, YYYY').isValid()){
+  if(moment(string, 'MMM DD, YYYY').isValid() || !isNaN(string)){
     natural = moment(string).format('MMM DD, YYYY');
     unix = moment(string).toDate().getTime()/1000;
   }
